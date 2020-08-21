@@ -96,8 +96,12 @@ def cache():
                             # Quantity section
                             elif query == "quantity":
                                 quantity = input("Input a quantity higher than 0")
+                                count = 0
                                 if quantity.isnumeric():
-                                    print(quantity)
+                                    for _quantity in quantities:
+                                        if _quantity > quantity:
+                                            count += 1
+                                    print(count)
                                 else:
                                     print("Incorrect quantity")
 
