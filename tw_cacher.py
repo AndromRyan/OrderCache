@@ -1,10 +1,8 @@
 # Creator: Alexander Ryan
 # Task allocated by TradeWeb - Mike Byrne
-# Started: 21/08/2020 - 12:34
-# Ended: 21/08/2020 - 17:04
 
 # Tasks:
-# System to cache sovereign bonds consiting of a 4 part string
+# System to cache sovereign bonds consisting of a 4 part string
 # Add and cancel orders
 # Queries:
 #   Search for Bond ID
@@ -32,7 +30,7 @@ def cacher():
             if process == "trade":  # Adding section
                 trading = True  # Sets up an individual while loops to keep trading running until success
                 while trading:
-                    trade = input("Please insert a trade, in the form 'ID1 BondD B 10000': ").replace("'", "")  # Clean up
+                    trade = input("Insert a trade, in the form 'ID1 BondD B 10000': ").replace("'", "")  # Clean up
                     if not re.fullmatch("ID([0-9])+ Bond[A-Z] '*[BS]'* [1-9][0-9]*", trade):  # Check matched format
                         print("Incorrect trade format")
                         continue  # Due to wrong input
@@ -106,7 +104,7 @@ def cacher():
                                 quantifying = False  # Success, end quantity query loop
 
                         elif query == "total":  # Total section
-                            total = input("Input a direction either All or B or S: ").upper()  # enforce upper to normalise
+                            total = input("Input a direction - All or B or S: ").upper()  # enforce upper to normalise
                             if total in ("B", "S"):
                                 print(f"{directions.count(total)}\n")  # return the number of buy or sell trades
                             elif total == "ALL":
@@ -127,4 +125,5 @@ def cacher():
         print(f"\nCurrent Cache:  {cached_trades}\n")  # Show current cached trades
 
 
-cacher()
+if __name__ == '__main__':
+    cacher()
