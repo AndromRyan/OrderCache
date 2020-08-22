@@ -30,7 +30,7 @@ def cacher():
             if process == "trade":  # Adding section
                 trading = True  # Sets up an individual while loops to keep trading running until success
                 while trading:
-                    trade = input("Insert a trade, in the form 'ID1 BondD B 10000': ").replace("'", "")  # Clean up
+                    trade = input("Insert a trade, in the form - ID1 BondD B 10000: ").replace("'", "")  # Clean up
                     if not re.fullmatch("ID([0-9])+ Bond[A-Z] '*[BS]'* [1-9][0-9]*", trade):  # Check matched format
                         print("Incorrect trade format")
                         continue  # Due to wrong input
